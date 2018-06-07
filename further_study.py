@@ -81,7 +81,9 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
+    for i in second_list:
+        custom_append(input_list, i)
+
 
 
 def custom_insert(input_list, index, value):
@@ -98,8 +100,8 @@ def custom_insert(input_list, index, value):
         True
 
     """
+    input_list[index:index] = [value]
 
-    pass
 
 
 def custom_remove(input_list, value):
@@ -118,7 +120,11 @@ def custom_remove(input_list, value):
 
     """
 
-    pass
+    for i in range(custom_len(input_list)):
+        if input_list[i] == value:
+            input_list[i:i+1] = []
+            break
+
 
 
 def custom_pop(input_list):
@@ -136,8 +142,9 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
-
-    return None
+    last = input_list[-1]
+    input_list[-1:] = []
+    return last
 
 
 def custom_index(input_list, value):
@@ -153,7 +160,9 @@ def custom_index(input_list, value):
 
     """
 
-    return 0
+    for item in range(custom_len(input_list)):
+        if input_list[item] == value:
+            return item
 
 
 def custom_count(input_list, value):
