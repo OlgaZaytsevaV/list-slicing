@@ -61,9 +61,10 @@ def custom_append(input_list, value):
         True
 
     """
-    length = custom_len(input_list)
-    input_list[length:length+1] = [value]
+    # length = custom_len(input_list)
+    # input_list[length:length+1] = [value]
 
+    input_list[:] = input_list[:] + [value]
 
 def custom_extend(input_list, second_list):
     """Append every item in second_list to input_list.

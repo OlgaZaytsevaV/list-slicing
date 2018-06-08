@@ -170,8 +170,12 @@ def replace_third_and_last(input_list):
 
     """
 
-    input_list[2] = 37
-    input_list[-1] = 37
+    # input_list[2] = 37
+    # input_list[-1] = 37
+
+    input_list[2:] = [37] + input_list[3:-1] + [37]
+
+    # input_list[:] = input_list[:2] + [37] + input_list[3:-1] + [37]
 
 
 def replace_middle(input_list):
@@ -205,8 +209,11 @@ def delete_third_and_seventh(input_list):
 
     """
 
-    input_list[6:7] = []
-    input_list[2:3] = []
+    # input_list[6:7] = []
+    # input_list[2:3] = []
+
+    input_list[2:7] = input_list[3:6]
+    # input_list[:] = input_list[:2] + input_list[3:6] + input_list[7:]
 
 
 def delete_middle(input_list):
